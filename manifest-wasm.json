@@ -1,0 +1,48 @@
+{
+  "schemaVersion": "1",
+  "id": "com.example.rust-template",
+  "name": "Rust Template (WASM)",
+  "description": "A minimal Rust plugin template targeting the sandboxed WASM runtime.",
+  "version": "0.1.0",
+  "runtime": "wasm-component",
+  "entrypoint": "plugin.wasm",
+  "compatibility": {
+    "inboxGrinderApi": "0.1"
+  },
+  "permissions": [
+    "read_metadata",
+    "read_text_body",
+    "suggest_archive"
+  ],
+  "matches": {
+    "fromDomains": [
+      "example.com"
+    ]
+  },
+  "contentNeeds": {
+    "metadata": true,
+    "textBody": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "previewLength": {
+        "type": "integer",
+        "minimum": 50,
+        "maximum": 500,
+        "default": 200,
+        "description": "Maximum number of characters to include in the body preview."
+      }
+    }
+  },
+  "publisher": {
+    "name": "Inbox Grinder",
+    "repository": "https://github.com/inbox-grinder/plugin-rust-template"
+  },
+  "catalogue": {
+    "categories": [
+      "utilities"
+    ]
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "schemaVersion": "1",
+  "id": "com.example.rust-template",
+  "name": "Rust Template",
+  "description": "A minimal Rust plugin template. Copy this directory, update the id and matches, and customise src/plugin.rs to add your own extraction logic.",
+  "version": "0.1.0",
+  "runtime": "local-binary",
+  "entrypoint": "plugin",
+  "compatibility": {
+    "inboxGrinderApi": "0.1"
+  },
+  "permissions": [
+    "read_metadata",
+    "read_text_body",
+    "suggest_archive"
+  ],
+  "matches": {
+    "fromDomains": [
+      "example.com"
+    ]
+  },
+  "contentNeeds": {
+    "metadata": true,
+    "textBody": true
+  },
+  "configSchema": {
+    "type": "object",
+    "additionalProperties": false,
+    "properties": {
+      "previewLength": {
+        "type": "integer",
+        "minimum": 50,
+        "maximum": 500,
+        "default": 200,
+        "description": "Maximum number of characters to include in the body preview."
+      }
+    }
+  },
+  "publisher": {
+    "name": "Inbox Grinder",
+    "repository": "https://github.com/inbox-grinder/plugin-rust-template"
+  }
+}
